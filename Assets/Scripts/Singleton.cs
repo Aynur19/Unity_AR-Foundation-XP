@@ -1,0 +1,37 @@
+using UnityEngine;
+
+public class Singleton<T> : MonoBehaviour where T : Component
+{
+	private static T instance;
+
+	public static T Instance
+	{
+		get
+		{
+			if(instance == null)
+			{
+				var objs = FindObjectOfType(typeof(T)) as T[];
+
+				if(objs != null)
+				{
+					if(objs.Length > 0)
+					{
+						instance = objs[0];
+					}
+
+					if(objs.Length > 1)
+					{
+						Debug.LogError($"There is more than one {typeof(T).Name} in the scene.");
+					}
+				}
+
+				GameObject gObject = new GameObject();
+				gObject.name = typeof(T).Name;
+				gObject.hideFlags = HideFlags.HideAndDontSave;
+				instance = gObject.AddComponent<T>();
+			}
+
+			return instance;
+		}
+	}
+}
