@@ -3,7 +3,9 @@ guid: 6f71d3e940951474ebd136006477c609
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ObjectAR: {fileID: 4244555996713999195, guid: c15988953e34ab841ace2509989b849c, type: 3}
+  - planeDetection: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

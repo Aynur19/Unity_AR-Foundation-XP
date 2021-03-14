@@ -3,7 +3,7 @@
 Shader "Outlined/Silhouetted Diffuse" {
 	Properties{
 		_Color("Main Color", Color) = (1,1,1,1)
-		_OutlineColor("Outline Color", Color) = (1,0.5,0,02)
+		_OutlineColor("Outline Color", Color) = (1,0.5,0,0.2)
 		_Outline("Outline width", Range(0.0, 0.5)) = .03
 		_MainTex("Base (RGB)", 2D) = "white" { }
 	}

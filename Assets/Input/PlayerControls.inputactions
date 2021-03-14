@@ -65,6 +65,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Player",
+            "id": "a34646c8-733d-4c31-8f73-6443733bf3df",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "abcb4e47-cccf-484f-9e57-ef78938fe786",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2544bda6-7baa-407e-9804-408d04a57313",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

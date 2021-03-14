@@ -35,14 +35,6 @@ public class GameEnvPlaneDetection : MonoBehaviour
 	private void Update()
 	{
 
-		//PlaneMarkerIsActive = isActive;
-		//planeMarkerAR.SetActive(PlaneMarkerIsActive);//.SetActive(PlaneMarkerIsActive);
-		//Debug.Log($"isActive: {isActive} \n " +
-		//	$"PlaneMarkerIsActive : {PlaneMarkerIsActive} \n " +
-		//	//$"planeMarker.enabled: {planeMarkerAR.enabled} \n" +
-		//	$"planeMarker.active: {planeMarkerAR.gameObject.active} \n" +
-		//	$"planeMarker.activeSelf: {planeMarkerAR.gameObject.activeSelf} \n " +
-		//	$"planeMarker.activeInHierarchy: {planeMarkerAR.gameObject.activeInHierarchy}");
 		ShowPlaneMarker();
 	}
 

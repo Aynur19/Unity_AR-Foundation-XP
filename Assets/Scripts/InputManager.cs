@@ -32,19 +32,8 @@ public class InputManager : Singleton<InputManager>
 
 	private void Start()
 	{
-		touchControls.AR.TouchInput.performed += cxt => DoubleTouch(cxt);  
 		touchControls.AR.TouchPress.started += ctx => StartTouch(ctx);
 		touchControls.AR.TouchPress.canceled += ctx => EndTouch(ctx);
-	}
-
-	private void DoubleTouch(InputAction.CallbackContext context)
-	{
-		if(OnDoubleTouch != null)
-		{
-			var position = touchControls.AR.TouchPosition.ReadValue<Vector2>();
-			Debug.Log($"Double touch {position}");
-			OnDoubleTouch(position, (float)context.time, (float)(context.time - context.startTime));
-		}
 	}
 
 	private void StartTouch(InputAction.CallbackContext context)

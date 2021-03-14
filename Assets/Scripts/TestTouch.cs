@@ -24,13 +24,11 @@ public class TestTouch : MonoBehaviour
 
 	private void OnEnable()
 	{
-		//inputManager.OnStartTouch += Move;
 		inputManager.OnEndTouch += OnEndTouch;
 	}
 
 	private void OnDisable()
 	{
-		//inputManager.OnStartTouch -= Move;
 		inputManager.OnEndTouch -= OnEndTouch;
 	}
 
@@ -74,20 +72,22 @@ public class TestTouch : MonoBehaviour
 				SlowTouchByEmptySpace();
 			}
 		}
-		else if(deltaTime > 0.5)
+		else
 		{
-			Debug.Log($"Time: {deltaTime}");
-			ObjectAR.CanCreated = true;
-			Debug.Log($"ObjectAR.CanCreated: {ObjectAR.CanCreated}");
+			if (deltaTime > 0.5)
+			{
+				Debug.Log($"Time: {deltaTime}");
+				ObjectAR.CanCreated = true;
+				Debug.Log($"ObjectAR.CanCreated: {ObjectAR.CanCreated}");
 
-			SlowTouchByNotInteractableObjectAR();
+				SlowTouchByNotInteractableObjectAR();
+			}
 		}
 	}
 
 	private void SingleTouchByInteractableObjectAR(InteractableObjectAR objectAR)
 	{
 		DetectObject(objectAR);
-
 	}
 
 	private void DoubleTouchByInteractableObjectAR(InteractableObjectAR objectAR)
@@ -140,7 +140,7 @@ public class TestTouch : MonoBehaviour
 	{
 		if(objectAR is IHighlightable highlightableAR)
 		{
-			highlightableAR.HighlightingObject();
+			highlightableAR.HighlightingObject(GameEnvConstants.OutlineWidth);
 		}
 	}
 }

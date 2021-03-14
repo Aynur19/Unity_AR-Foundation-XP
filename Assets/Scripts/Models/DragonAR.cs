@@ -3,6 +3,9 @@ using UnityEngine;
 public class DragonAR : InteractableObjectAR, IAnimatable
 {
 	[SerializeField]
+	private float width;
+
+	[SerializeField]
 	private Animator anim;
 	public bool DragonIsAnimated;
 
@@ -65,9 +68,9 @@ public class DragonAR : InteractableObjectAR, IAnimatable
 		ValidAnimationChange(nameof(animIsWalk), true);
 	}
 
-	public override void HighlightingObject()
+	public override void HighlightingObject(float outlineWidth)
 	{
-		base.HighlightingObject();
+		base.HighlightingObject(outlineWidth);
 
 		Debug.Log($"DragonAR is Highlighted? {IsHighlited}");
 
@@ -83,13 +86,13 @@ public class DragonAR : InteractableObjectAR, IAnimatable
 					{
 						if(skinnedMesh.materials[i] != null)
 						{
-							skinnedMesh.materials[i].SetFloat(GameEnvConstants.OutlineWidthName, 0.05f);
+							skinnedMesh.materials[i].SetFloat(GameEnvConstants.OutlineWidthName, outlineWidth);
 						}
 					}
 				}
 				else if(skinnedMesh.materials.Length == 1)
 				{
-					skinnedMesh.material.SetFloat(GameEnvConstants.OutlineWidthName, 0.05f);
+					skinnedMesh.material.SetFloat(GameEnvConstants.OutlineWidthName, outlineWidth);
 
 				}
 				

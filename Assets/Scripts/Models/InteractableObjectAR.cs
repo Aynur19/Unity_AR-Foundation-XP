@@ -7,15 +7,15 @@ public class InteractableObjectAR : ObjectAR, IHighlightable
 	// IHighlightable
 	public bool IsHighlited { get; set; }
 
-	public virtual void HighlightingObject()
+	public virtual void HighlightingObject(float outlineWidth)
 	{
 		var mesh = GetComponent<MeshRenderer>();
 
 		if(mesh != null && mesh.material != null)
 		{
-			if(mesh.material.GetFloat(GameEnvConstants.OutlineWidthName) < GameEnvConstants.OutlineWidthMiddle)
+			if(!IsHighlited)
 			{
-				mesh.material.SetFloat(GameEnvConstants.OutlineWidthName, GameEnvConstants.OutlineWidthMax);
+				mesh.material.SetFloat(GameEnvConstants.OutlineWidthName, outlineWidth);
 				IsHighlited = true;
 			}
 			else
@@ -29,9 +29,9 @@ public class InteractableObjectAR : ObjectAR, IHighlightable
 			var skinnedMesh = GetComponent<SkinnedMeshRenderer>();
 			if(skinnedMesh != null && skinnedMesh.material != null)
 			{
-				if(skinnedMesh.material.GetFloat(GameEnvConstants.OutlineWidthName) < GameEnvConstants.OutlineWidthMiddle)
+				if(IsHighlited)
 				{
-					skinnedMesh.material.SetFloat(GameEnvConstants.OutlineWidthName, GameEnvConstants.OutlineWidthMax);
+					skinnedMesh.material.SetFloat(GameEnvConstants.OutlineWidthName, outlineWidth);
 					IsHighlited = true;
 				}
 				else
