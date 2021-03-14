@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 
@@ -8,8 +6,8 @@ public class GameEnvImageTracking2D : MonoBehaviour
 {
     private ARTrackedImageManager trackedImageManager;
 
-	[SerializeField]
-	private Animator animGameMode;
+	//[SerializeField]
+	//private Animator animGameMode;
 
 	private void Awake()
 	{
@@ -26,10 +24,10 @@ public class GameEnvImageTracking2D : MonoBehaviour
 		trackedImageManager.trackedImagesChanged -= OnImageChanged;
 	}
 
-	private void Start()
-	{
-		animGameMode.SetBool("DragonIsAnimated", true);
-	}
+	//private void Start()
+	//{
+	//	animGameMode.SetBool("DragonIsAnimated", true);
+	//}
 
 	private void OnImageChanged(ARTrackedImagesChangedEventArgs args)
 	{
